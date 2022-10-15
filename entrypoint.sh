@@ -22,6 +22,6 @@ cat /root/.aws/credentials
 aws --version
 aws s3 ls
 #echo "Hello $1 $2 $3"
-#time=$(date)
-#echo "::set-output name=time::$time"
+time=$(date)
+echo "::set-output name=time::$time"
 
