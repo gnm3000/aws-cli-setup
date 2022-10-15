@@ -15,9 +15,9 @@ printf "[default]
 aws_access_key_id=$1
 aws_secret_access_key=$2
 aws_session_token=$3" | tee -a /root/.aws/credentials >/dev/null
-aws --version
-echo "$(aws s3 ls)"
+aws sts get-caller-identity
 #echo "Hello $1 $2 $3"
 time=$(date)
 echo "::set-output name=time::$time"
+
 
