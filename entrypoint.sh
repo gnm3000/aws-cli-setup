@@ -11,6 +11,9 @@ mkdir /root/.aws
 printf "[default]
 region=us-east-1
 output=json" | tee -a /root/.aws/config >/dev/null
+echo "first param $1 \n\n"
+echo "2d param $2 \n\n"
+echo "3d param $3 \n\n"
 
 
 printf "[default]
