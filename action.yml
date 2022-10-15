@@ -2,10 +2,19 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  AWS_ACCESS_KEY_ID:  # id of input
+    description: 'AWS_ACCESS_KEY_ID'
     required: true
-    default: 'World'
+    default: ''
+  AWS_SECRET_ACCESS_KEY:  # id of input
+    description: 'AWS_SECRET_ACCESS_KEY'
+    required: true
+    default: ''
+  AWS_SESSION_TOKEN:  # id of input
+    description: 'AWS_SESSION_TOKEN'
+    required: true
+    default: ''
+  
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -13,4 +22,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.AWS_ACCESS_KEY_ID }}
+    - ${{ inputs.AWS_SECRET_ACCESS_KEY }}
+    - ${{ inputs.AWS_SESSION_TOKEN }}
